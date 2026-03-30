@@ -4,6 +4,8 @@ const multer = require("multer");
 const fs = require("fs");
 const pdfParse = require("pdf-parse");
 
+const PORT = process.env.PORT || 5000;
+
 const app = express();
 //Middleware
 app.use(cors());
@@ -277,6 +279,6 @@ app.post("/analyze", upload.single("resume"), async (req, res) => {
 });
 
 //Start the Server
-app.listen(5000, () => {
-  console.log("server is liveon port 5000");
+app.listen(PORT, () => {
+  console.log("server is liveon port ",PORT);
 });
